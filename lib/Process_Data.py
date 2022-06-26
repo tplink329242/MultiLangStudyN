@@ -16,7 +16,6 @@ import csv  # reader()
 import sys  # sys.maxsize
 
 # Allows code to read in large CSV files
-#csv.field_size_limit(sys.maxsize)
 csv.field_size_limit(2**31-1)
 
 

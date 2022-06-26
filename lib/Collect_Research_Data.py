@@ -10,7 +10,7 @@ from types import SimpleNamespace
 import csv  # reader()
 import sys  # sys.maxsize
 # Allows code to read in large CSV files
-csv.field_size_limit(sys.maxsize)
+csv.field_size_limit(2**31-1)
 # Displays a progress bar while looping through an iterable object
 
 
@@ -70,6 +70,9 @@ class Collect_Research_Data(metaclass=abc.ABCMeta):
         print("---> Storing Serialized Object to " + file_name)
         # Converts all class objects to list of values
         serialized_objects = {key: self._object_to_dict(value) for key, value in data.items()}
+
+        #ordered data here
+        
         # Pickles data
         Process_Data.store_data(file_path=self.file_path, file_name=file_name, data=serialized_objects)
 
@@ -77,6 +80,7 @@ class Collect_Research_Data(metaclass=abc.ABCMeta):
         pbar = ProgressBar()
         for repo_item in pbar(list_of_repos):
             repo_item = SimpleNamespace(**repo_item)
+            
             self._update_statistics(repo_item)
         self._update()
 

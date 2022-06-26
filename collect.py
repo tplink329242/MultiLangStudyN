@@ -87,6 +87,42 @@ def RepoStats(original_repo_list=None):
     if (original_repo_list == None):
         original_repo_list = Process_Data.load_data(file_path=System.getdir_collect(), file_name='Repository_List')
 
+        #open language file
+        languageFile = open("Top_50_languages.txt","r")
+
+        list_language = []
+
+        #load data
+        for i in range(0, 50):
+            strLanguage = languageFile.readline()
+            strLanguage = strLanguage.strip()
+            list_language.append(strLanguage)
+
+        #filter data here
+        for org_repo in reversed(original_repo_list):
+            org_repo['language_dictionary']
+
+            language_keys = reversed(list(org_repo['language_dictionary'].keys()))
+            for key in language_keys:
+                num_language_count = 0
+
+                for listValues in list_language:
+
+                    if key == listValues:
+                        break
+                    else:
+                        num_language_count = num_language_count + 1
+
+                if num_language_count >= 50:
+                    del((org_repo['language_dictionary'])[key])
+            
+            if len(org_repo['language_dictionary']) <2:
+                original_repo_list.remove(org_repo)
+                
+
+    languageFile.close()
+
+
     repository_data = Collect_RepoStats()
     repository_data.process_data(original_repo_list)
     repository_data.save_data()
@@ -272,7 +308,8 @@ def main(argv):
     if IsDaemon:
         Daemonize ()
 
-
+    print(step)
+    
     if (step == "all"):
         if (by_year == True):
             for year in range (System.START_YEAR, System.END_YEAR+1, 1):

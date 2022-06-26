@@ -206,7 +206,7 @@ class TextModel:
 
         # Phrase Detection
         common_terms = ["of", "with", "without", "and", "or", "the", "a"]
-        phrases = Phrases(words, common_terms = common_terms)
+        phrases = Phrases(words, common_terms=common_terms)
         bigram = Phraser(phrases)
         all_sentences = list(bigram[words])
 
