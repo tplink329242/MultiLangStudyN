@@ -16,7 +16,8 @@ import csv  # reader()
 import sys  # sys.maxsize
 
 # Allows code to read in large CSV files
-csv.field_size_limit(sys.maxsize)
+#csv.field_size_limit(sys.maxsize)
+csv.field_size_limit(2**31-1)
 
 
 class Process_Data:
@@ -211,8 +212,8 @@ class Process_Data:
         return new_dict
 
     def IsInTopLanguages (lang):      
-        TopLanguages = ["c","c++","java","c#","javascript","python","html","php","go",\
-                        "ruby","typescript","objective-c","assembly","tsql","css","scala","shell","perl"]
+        TopLanguages = ["c","c++","java","c#","javascript","python","php","go",\
+                        "ruby","typescript","objective-c","assembly","tsql","scala","shell","perl"]
         if (lang in TopLanguages):
             return True
         else:
