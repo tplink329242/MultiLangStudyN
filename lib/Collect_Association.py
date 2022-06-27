@@ -77,7 +77,8 @@ class Collect_Association(Collect_Research_Data):
 
         rules = association_rules(freq_items, metric="confidence", min_threshold=0.01)
         print ("association_rules:")
-        print (rules.head(100))
+        print(rules.to_markdown())
+        #print (rules.head(100))
 
         #load cluster information
         cluster_stats = Process_Data.load_data(file_path=System.getdir_stat(), file_name="Cluster_Stats")
