@@ -83,6 +83,7 @@ def UpdateRepo():
 
 # repo stats
 def RepoStats(original_repo_list=None):
+    num_language = 30
     TimeTag(">>>>>>>>>>>> Statistic on repositories...")
     if (original_repo_list == None):
         original_repo_list = Process_Data.load_data(file_path=System.getdir_collect(), file_name='Repository_List')
@@ -93,7 +94,7 @@ def RepoStats(original_repo_list=None):
         list_language = []
 
         #load data
-        for i in range(0, 50):
+        for i in range(0, num_language):
             strLanguage = languageFile.readline()
             strLanguage = strLanguage.strip()
             list_language.append(strLanguage)

@@ -9,7 +9,7 @@
             "name": "Python",
             "type": "python",
             "request": "launch",
-            "args":["-s", "repostats"],
+            "args":["-s", "asso"],
             "program": "collect.py",
             "console": "integratedTerminal",
             "justMyCode": true

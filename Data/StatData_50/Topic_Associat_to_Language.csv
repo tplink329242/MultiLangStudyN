@@ -1,0 +1,15 @@
+antecedents,cluster_topics,consequents
+3,['process configuration_management'],javascript_typescript
+6,['world backend'],javascript_typescript
+15,['snowflake visual editor board'],python_shell
+15,['snowflake visual editor board'],javascript_shell
+15,['snowflake visual editor board'],javascript_typescript
+17,['archive content'],javascript_typescript
+19,['natural_language processing coursera course'],python_shell
+19,['natural_language processing coursera course'],javascript_shell
+20,['cordova phonegap plugin serial communication'],python_shell
+23,['enterprise_grade graphql server'],javascript_typescript
+30,['various aspect source github github amplify'],python_shell
+30,['various aspect source github github amplify'],javascript_typescript
+44,['bluetooth small memory footprint'],python_shell
+44,['bluetooth small memory footprint'],javascript_typescript

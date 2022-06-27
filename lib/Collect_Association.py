@@ -71,7 +71,7 @@ class Collect_Association(Collect_Research_Data):
         encoded_vals = self._one_hot_encoding (df, unique_items)
         ohe_df = pd.DataFrame(encoded_vals)
 
-        freq_items = apriori(ohe_df, min_support=0.01, use_colnames=True)
+        freq_items = apriori(ohe_df, min_support=0.003, use_colnames=True)
         print ("freq_items:")
         print (freq_items.head(100))
 
