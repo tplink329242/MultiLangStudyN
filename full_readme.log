@@ -1,0 +1,27 @@
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package brown to /root/nltk_data...
+[nltk_data]   Package brown is already up-to-date!
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package wordnet to /root/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package brown to /root/nltk_data...
+[nltk_data]   Package brown is already up-to-date!
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package wordnet to /root/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+>>>>>>>>>>>> Statistic on SumReadMe... : Thu Jun 30 05:36:55 2022
+Traceback (most recent call last):
+  File "collect.py", line 417, in <module>
+    main(sys.argv[1:])
+  File "collect.py", line 410, in main
+    CollectSumReadMe ()
+  File "collect.py", line 256, in CollectSumReadMe
+    repo_stats = Process_Data.load_data(file_path=file_path, file_name='Repository_Stats')
+  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/Process_Data.py", line 184, in load_data
+    pickle_file = open(file, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: '/root/MultiLangStudyN_readme/MultiLangStudyN/Data/StatData/Repository_Stats'
