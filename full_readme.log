@@ -14,14 +14,29 @@
 [nltk_data]   Package punkt is already up-to-date!
 [nltk_data] Downloading package wordnet to /root/nltk_data...
 [nltk_data]   Package wordnet is already up-to-date!
->>>>>>>>>>>> Statistic on SumReadMe... : Thu Jun 30 05:36:55 2022
+  0% |                                                                        |  2% |#                                                                       |  5% |###                                                                     |  7% |#####                                                                   | 10% |#######                                                                 | 12% |#########                                                               | 15% |###########                                                             | 17% |############                                                            | 20% |##############                                                          | 23% |################                                                        | 25% |##################                                                      | 28% |####################                                                    | 30% |######################                                                  | 33% |########################                                                | 35% |#########################                                               | 38% |###########################                                             | 41% |#############################                                           | 43% |###############################                                         | 46% |#################################                                       | 48% |###################################                                     | 51% |####################################                                    | 53% |######################################                                  | 56% |########################################                                | 58% |##########################################                              | 61% |############################################                            | 64% |##############################################                          | 66% |################################################                        | 69% |#################################################                       | 71% |###################################################                     | 74% |#####################################################                   | 76% |#######################################################                 | 79% |#########################################################               | 82% |###########################################################             | 84% |############################################################            | 87% |##############################################################          | 89% |################################################################        | 92% |##################################################################      | 94% |####################################################################    | 97% |######################################################################  |100% |########################################################################|
+>>>>>>>>>>>> Statistic on SumReadMe... : Thu Jun 30 06:00:35 2022
 Traceback (most recent call last):
   File "collect.py", line 417, in <module>
     main(sys.argv[1:])
   File "collect.py", line 410, in main
     CollectSumReadMe ()
-  File "collect.py", line 256, in CollectSumReadMe
-    repo_stats = Process_Data.load_data(file_path=file_path, file_name='Repository_Stats')
-  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/Process_Data.py", line 184, in load_data
-    pickle_file = open(file, 'rb')
-FileNotFoundError: [Errno 2] No such file or directory: '/root/MultiLangStudyN_readme/MultiLangStudyN/Data/StatData/Repository_Stats'
+  File "collect.py", line 263, in CollectSumReadMe
+    swCt = SWCate ()
+  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/SWCate.py", line 22, in __init__
+    self.LoadSwCate ()
+  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/SWCate.py", line 26, in LoadSwCate
+    df = pd.read_csv(FilePath)
+  File "/usr/local/lib/python3.8/dist-packages/pandas/util/_decorators.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 680, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 575, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 934, in __init__
+    self._engine = self._make_engine(f, self.engine)
+  File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 1218, in _make_engine
+    self.handles = get_handle(  # type: ignore[call-overload]
+  File "/usr/local/lib/python3.8/dist-packages/pandas/io/common.py", line 786, in get_handle
+    handle = open(
+FileNotFoundError: [Errno 2] No such file or directory: 'Data/OriginData/SoftwareCategory.csv'

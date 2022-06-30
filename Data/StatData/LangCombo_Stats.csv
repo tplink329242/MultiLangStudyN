@@ -1,0 +1,15 @@
+combo_id,combination,count,distribution,language_used
+0,python shell,5,0.13157894736842105,2
+1,javascript typescript,5,0.13157894736842105,2
+2,javascript shell typescript,4,0.10526315789473684,3
+3,javascript shell,3,0.07894736842105263,2
+4,go shell,3,0.07894736842105263,2
+5,javascript python,2,0.05263157894736842,2
+6,shell vim script,2,0.05263157894736842,3
+7,python typescript,2,0.05263157894736842,2
+8,javascript python typescript,2,0.05263157894736842,3
+9,javascript python shell typescript,2,0.05263157894736842,4
+10,javascript powershell python shell typescript,2,0.05263157894736842,5
+11,c python shell,2,0.05263157894736842,3
+12,c python shell vim script,2,0.05263157894736842,5
+13,java kotlin,2,0.05263157894736842,2
