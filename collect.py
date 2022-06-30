@@ -26,8 +26,45 @@ from lib.CloneRepo import CloneRepo
 from lib.Sample import Sample
 from lib.Collect_SpearMan import Collect_SpearMan
 from lib.Sumreadme import Sumreadme
+from lib.SWCate import SWCate
 
+num_rank_language = 50
 
+def filter_data(original_repo_list, num_rank_language):
+    #open language file
+    languageFile = open("Top_50_languages.txt","r")
+
+    list_language = []
+
+    #load data
+    for i in range(0, num_rank_language):
+        strLanguage = languageFile.readline()
+        strLanguage = strLanguage.strip()
+        list_language.append(strLanguage)
+
+    #filter data here
+    for org_repo in reversed(original_repo_list):
+        org_repo['language_dictionary']
+
+        language_keys = reversed(list(org_repo['language_dictionary'].keys()))
+        for key in language_keys:
+            num_language_count = 0
+
+            for listValues in list_language:
+
+                if key == listValues:
+                    break
+                else:
+                    num_language_count = num_language_count + 1
+
+            if num_language_count >= 50:
+                del((org_repo['language_dictionary'])[key])
+        
+        if len(org_repo['language_dictionary']) <2:
+            original_repo_list.remove(org_repo)
+
+    languageFile.close()
+    return original_repo_list
 
 def Daemonize(pid_file=None):
     pid = os.fork()
@@ -83,47 +120,14 @@ def UpdateRepo():
 
 # repo stats
 def RepoStats(original_repo_list=None):
-    num_language = 10
     TimeTag(">>>>>>>>>>>> Statistic on repositories...")
     if (original_repo_list == None):
         original_repo_list = Process_Data.load_data(file_path=System.getdir_collect(), file_name='Repository_List')
 
-        #open language file
-        languageFile = open("Top_50_languages.txt","r")
+    #filter data here
+    original_repo_list = filter_data(original_repo_list, num_rank_language)
 
-        list_language = []
-
-        #load data
-        for i in range(0, num_language):
-            strLanguage = languageFile.readline()
-            strLanguage = strLanguage.strip()
-            list_language.append(strLanguage)
-
-        #filter data here
-        for org_repo in reversed(original_repo_list):
-            org_repo['language_dictionary']
-
-            language_keys = reversed(list(org_repo['language_dictionary'].keys()))
-            for key in language_keys:
-                num_language_count = 0
-
-                for listValues in list_language:
-
-                    if key == listValues:
-                        break
-                    else:
-                        num_language_count = num_language_count + 1
-
-                if num_language_count >= 50:
-                    del((org_repo['language_dictionary'])[key])
-            
-            if len(org_repo['language_dictionary']) <2:
-                original_repo_list.remove(org_repo)
-                
-
-    languageFile.close()
-
-
+    #proceed to analysics
     repository_data = Collect_RepoStats()
     repository_data.process_data(original_repo_list)
     repository_data.save_data()
@@ -256,6 +260,9 @@ def CollectSumReadMe (StartNo=0, EndNo=65535):
     research_data.process_data(list_of_repos=repo_stats)
     research_data.save_data()
 
+    swCt = SWCate ()
+    swCt.Categorize ()
+
 
 def StatAll ():
     original_repo_list = Process_Data.load_data(file_path=System.getdir_collect(), file_name='Repository_List')
@@ -309,8 +316,7 @@ def main(argv):
     if IsDaemon:
         Daemonize ()
 
-    print(step)
-    
+
     if (step == "all"):
         if (by_year == True):
             for year in range (System.START_YEAR, System.END_YEAR+1, 1):

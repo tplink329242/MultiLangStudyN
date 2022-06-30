@@ -11,7 +11,7 @@ import sys  # sys.maxsize
 import os
 import pandas as pd
 # Allows code to read in large CSV files
-csv.field_size_limit(2**31-1)
+csv.field_size_limit(sys.maxsize)
 
 from lib.TextModel import TextModel
 text_model = TextModel()
@@ -281,6 +281,11 @@ class Github_API():
                     break
                 for repo in star_repos:
                     star_IDS.append (repo['id'])
+            
+            #test 50 repos
+            if list_of_repositories >=50:
+                break
+
         return list_of_repositories
 
     def get_active_repos(self):

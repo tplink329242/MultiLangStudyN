@@ -16,7 +16,7 @@ import csv  # reader()
 import sys  # sys.maxsize
 
 # Allows code to read in large CSV files
-csv.field_size_limit(2**31-1)
+csv.field_size_limit(sys.maxsize)
 
 
 class Process_Data:
@@ -211,9 +211,19 @@ class Process_Data:
         return new_dict
 
     def IsInTopLanguages (lang):      
-        TopLanguages = ["c","c++","java","c#","javascript","python","php","go",\
-                        "ruby","typescript","objective-c","assembly","tsql","scala","shell","perl"]
-        if (lang in TopLanguages):
+
+        #open file
+        languageFile = open("Top_50_languages.txt","r")
+
+        list_language = []
+
+        #load data
+        for i in range(0, 50):
+            strLanguage = languageFile.readline()
+            strLanguage = strLanguage.strip()
+            list_language.append(strLanguage)
+
+        if (lang in list_language):
             return True
         else:
             return False

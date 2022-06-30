@@ -28,10 +28,7 @@ class Repository_Stats():
             self.language_distribution[key] = self.language_distribution[key]/self.total_bytes_written
         
         # A list of all the programming language names used in this repository
-        #sort data here
-        list_all_languages = list(repo.language_dictionary.keys())
-        list_all_languages.sort()
-        self.all_languages = list_all_languages
+        self.all_languages = list(repo.language_dictionary.keys())
         
         # String value of the primary language, in bytes written, of the current repo
         self.main_language = Process_Data.calculate_top_dict_key(self.language_dictionary, None)

@@ -71,14 +71,13 @@ class Collect_Association(Collect_Research_Data):
         encoded_vals = self._one_hot_encoding (df, unique_items)
         ohe_df = pd.DataFrame(encoded_vals)
 
-        freq_items = apriori(ohe_df, min_support=0.003, use_colnames=True)
+        freq_items = apriori(ohe_df, min_support=0.01, use_colnames=True)
         print ("freq_items:")
         print (freq_items.head(100))
 
         rules = association_rules(freq_items, metric="confidence", min_threshold=0.01)
         print ("association_rules:")
-        print(rules.to_markdown())
-        #print (rules.head(100))
+        print (rules.head(100))
 
         #load cluster information
         cluster_stats = Process_Data.load_data(file_path=System.getdir_stat(), file_name="Cluster_Stats")
