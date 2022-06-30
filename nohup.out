@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "collect.py", line 8, in <module>
+    from lib.System import System
+  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/System.py", line 5, in <module>
+    class System():
+  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/System.py", line 31, in System
+    os.mkdir (CMMT_STAT_DIR)
+FileNotFoundError: [Errno 2] No such file or directory: '/root/MultiLangStudyN_readme/MultiLangStudyN/Data/StatData/CmmtSet/'
+Traceback (most recent call last):
+  File "collect.py", line 8, in <module>
+    from lib.System import System
+  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/System.py", line 5, in <module>
+    class System():
+  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/System.py", line 31, in System
+    os.mkdir (CMMT_STAT_DIR)
+FileNotFoundError: [Errno 2] No such file or directory: '/root/MultiLangStudyN_readme/MultiLangStudyN/Data/StatData/CmmtSet/'
+Traceback (most recent call last):
+  File "collect.py", line 8, in <module>
+    from lib.System import System
+  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/System.py", line 5, in <module>
+    class System():
+  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/System.py", line 31, in System
+    os.mkdir (CMMT_STAT_DIR)
+FileNotFoundError: [Errno 2] No such file or directory: '/root/MultiLangStudyN_readme/MultiLangStudyN/Data/StatData/CmmtSet/'
