@@ -15,28 +15,25 @@
 [nltk_data] Downloading package wordnet to /root/nltk_data...
 [nltk_data]   Package wordnet is already up-to-date!
   0% |                                                                        |  2% |#                                                                       |  5% |###                                                                     |  7% |#####                                                                   | 10% |#######                                                                 | 12% |#########                                                               | 15% |###########                                                             | 17% |############                                                            | 20% |##############                                                          | 23% |################                                                        | 25% |##################                                                      | 28% |####################                                                    | 30% |######################                                                  | 33% |########################                                                | 35% |#########################                                               | 38% |###########################                                             | 41% |#############################                                           | 43% |###############################                                         | 46% |#################################                                       | 48% |###################################                                     | 51% |####################################                                    | 53% |######################################                                  | 56% |########################################                                | 58% |##########################################                              | 61% |############################################                            | 64% |##############################################                          | 66% |################################################                        | 69% |#################################################                       | 71% |###################################################                     | 74% |#####################################################                   | 76% |#######################################################                 | 79% |#########################################################               | 82% |###########################################################             | 84% |############################################################            | 87% |##############################################################          | 89% |################################################################        | 92% |##################################################################      | 94% |####################################################################    | 97% |######################################################################  |100% |########################################################################|
->>>>>>>>>>>> Statistic on SumReadMe... : Thu Jun 30 06:00:35 2022
-Traceback (most recent call last):
-  File "collect.py", line 417, in <module>
-    main(sys.argv[1:])
-  File "collect.py", line 410, in main
-    CollectSumReadMe ()
-  File "collect.py", line 263, in CollectSumReadMe
-    swCt = SWCate ()
-  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/SWCate.py", line 22, in __init__
-    self.LoadSwCate ()
-  File "/root/MultiLangStudyN_readme/MultiLangStudyN/lib/SWCate.py", line 26, in LoadSwCate
-    df = pd.read_csv(FilePath)
-  File "/usr/local/lib/python3.8/dist-packages/pandas/util/_decorators.py", line 311, in wrapper
-    return func(*args, **kwargs)
-  File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 680, in read_csv
-    return _read(filepath_or_buffer, kwds)
-  File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 575, in _read
-    parser = TextFileReader(filepath_or_buffer, **kwds)
-  File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 934, in __init__
-    self._engine = self._make_engine(f, self.engine)
-  File "/usr/local/lib/python3.8/dist-packages/pandas/io/parsers/readers.py", line 1218, in _make_engine
-    self.handles = get_handle(  # type: ignore[call-overload]
-  File "/usr/local/lib/python3.8/dist-packages/pandas/io/common.py", line 786, in get_handle
-    handle = open(
-FileNotFoundError: [Errno 2] No such file or directory: 'Data/OriginData/SoftwareCategory.csv'
+>>>>>>>>>>>> Statistic on SumReadMe... : Thu Jun 30 06:07:55 2022
+[0]1 -----> driver: ['usb-drives','on-board','spi','hardware']
+[0]2 -----> system: ['gateway','linux-kernel','recyclerview-adapter','virtual machine','kernel','container']
+[0]3 -----> programming: ['decompiler','memory leak detection','code fixer','dependency manager','compiler','static analysis','programming','code-analysis']
+[0]4 -----> middleware: ['front end framework','game-development','util','managing javascript','patcher','error report','configuration file','codify api','developer experience','framework','utility library','algorithm','data structure','modules','compliant api','microservice']
+[0]5 -----> end-user application: ['tool','mobile','ios app','desktop-application','library','toolkit']
+[5]6 -----> word process: ['text-editor','fonts','editor','documentation']
+[5]7 -----> database: ['object storage','database','mysql','storage library','datastore']
+[5]8 -----> spreadsheet: ['build form']
+[5]9 -----> multimedia: ['live-streaming','directshow','video player','ffmpeg','streaming','youtube']
+[5]10 -----> presentation: ['charts','presentation']
+[5]11 -----> enterprise: ['enterprise','virtual dom','odoo']
+[5]12 -----> information worker: ['configuration management','cheatsheet','workflow']
+[5]13 -----> communication: ['wechat','facebook','social-network','event bus','messenger','messaging']
+[5]14 -----> education: ['education','learning material','practical guide','design pattern','style guide','a collection','examples','coding guideline','best-practices','jupyter notebook','handbook','tutorial','sample code']
+[5]15 -----> simulation: ['emulator package']
+[5]16 -----> content Access: ['client','barcode scanning','cloud storage','powershell','command-line','file uploader' 'datawork','downloader','download utility','bash']
+[5]17 -----> application suites: ['package manager','widgets','plugin manager','version management']
+[5]18 -----> email: ['mail app']
+[5]19 -----> engineering and development: ['benchmarking','developer friendly','code editor','development','git hook', 'gitlab','code searching','buildpack','code formatter']
+word process  ----> {'documentation': 100}
+>>>>>>>>>>>> End : Thu Jun 30 06:08:16 2022
