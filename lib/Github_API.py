@@ -283,7 +283,7 @@ class Github_API():
                     star_IDS.append (repo['id'])
             
             #test 50 repos
-            if list_of_repositories >=50:
+            if len(list_of_repositories) >=50:
                 break
 
         return list_of_repositories
